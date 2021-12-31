@@ -1,0 +1,197 @@
+<link rel="stylesheet" href="/stylesheets/util.css" />
+<link rel="stylesheet" type="text/css"        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css" />
+    
+<div id="masthead">  
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <h1><%= head%>
+            <p class="lead"></p>
+          </h1>
+        </div>
+         </div> 
+    </div><!-- /cont -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div style="background-color: #116;" class="top-spacer"> </div>
+        </div>
+      </div> 
+    </div><!-- /cont -->
+    
+  </div>
+  
+  
+  <div class="container">
+    <div class="row">
+      
+      <div class="col-md-12"> 
+        
+        <div style="background-color: #116;" class="panel">
+          <div class="panel-body">
+            
+           
+            
+            <!--/stories-->
+              <div class="row">
+                <div class="limiter">
+                    <div class="container-login100" style="background: #116;">
+                        <div class="card form wrap-login100 p-l-55 p-r-55 p-t-53 p-b-54">
+                      
+                            <% if(form != null) { %>
+                            <% if(form =='book'){ %>
+                            <form action="/add/book" method="post" class="login100-form validate-form" id="form" enctype="multipart/form-data">
+                                <span class="login100-form-title p-b-45"> Book Details </span>
+        
+                                <div class="wrap-input100 validate-input m-b-3">
+                                    <span class="label-input100">Title</span>
+                                    <input id="title" class="input100" type="text" name="title"
+                                        placeholder="Type Book Title" />
+        
+                                    <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                                </div>                        <div class="m-t-1 m-b-1">
+                                    <span class="error" id="error"></span>
+                                </div>
+                                <div class="wrap-input100 validate-input m-b-3">
+                                    <span class="label-input100">Genre</span>
+                                    <input id="genre" class="input100" type="text" name="genre"
+                                        placeholder="Type Book Genre" />
+        
+                                    <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                                </div>                        <div class="m-t-1 m-b-1">
+                                    <span class="error" id="error"></span>
+                                </div>
+                                <div class="wrap-input100 validate-input m-b-3">
+                                    <span class="label-input100">Year</span>
+                                    <input id="year" class="input100" type="text" name="year"
+                                        placeholder="Type Book Year" />
+        
+                                    <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                                </div>                        <div class="m-t-1 m-b-1">
+                                    <span class="error" id="error"></span>
+                                </div>
+                                <div class="wrap-input100 validate-input m-b-3">
+                                    <span class="label-input100">Info</span>
+                                    <input id="info" class="input100" type="text" name="info"
+                                        placeholder="Type Book Info" />
+        
+                                    <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                                </div>                        <div class="m-t-1 m-b-1">
+                                    <span class="error" id="error"></span>
+                                </div>
+                                <div class="wrap-input100 validate-input" >
+                                    <span class="label-input100">Author Name</span>
+                                    
+                                    <input class="input100" id="author" type="text" name="author"
+                                        placeholder="Type Author's Name" />
+        
+                                    <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                </div>
+                                <div class="m-t-1 m-b-1">
+                                    <p id="strength-text"></p>
+                                </div>
+                                <div class="wrap-input100 validate-input m-b-3" >
+                                    <span class="label-input100">Cover</span>
+                                    <input id="cover" class="input100" type="file" name="cover"
+                                        placeholder="Upload Book Cover" />
+        
+                                    <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                                </div>                        <div class="m-t-1 m-b-1">
+                                    <span class="error" id="error"></span>
+                                </div>
+        
+                                
+        
+                                <div class="m-3 container-login100-form-btn">
+                                    <div class="wrap-login100-form-btn">
+                                        <div class="login100-form-bgbtn"></div>
+                                        <button type="button" class="login100-form-btn" onclick=submit()>
+                                            Submit
+                                        </button>
+                                    </div>
+                                </div>
+                            </form><% } else{%>
+                                <form action="/add/author" method="post" class="login100-form validate-form" id="form" enctype="multipart/form-data">
+                                    <span class="login100-form-title p-b-45"> Author Details </span>
+            
+                                    <div class="wrap-input100 validate-input m-b-3" >
+                                        <span class="label-input100">Pen Name</span>
+                                        <input id="pen" class="input100" type="text" name="pen"
+                                            placeholder="Type Pen Name" />
+            
+                                        <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                                    </div>                        <div class="m-t-1 m-b-1">
+                                        <span class="error" id="error"></span>
+                                    </div>
+                                    <div class="wrap-input100 validate-input" >
+                                        <span class="label-input100">Name</span>
+                                        
+                                        <input class="input100" id="name" type="text" name="name"
+                                            placeholder="Type Author name" />
+            
+                                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                    </div>
+                                    <div class="wrap-input100 validate-input" >
+                                        <span class="label-input100">Books</span>
+                                        
+                                        <input class="input100" id="books" type="text" name="books"
+                                            placeholder="Type Author Books" />
+            
+                                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                    </div>
+                                    <div class="wrap-input100 validate-input" >
+                                        <span class="label-input100">Bio</span>
+                                        
+                                        <input class="input100" id="bio" type="text" name="bio"
+                                            placeholder="Type Author's Bio" />
+            
+                                        <span class="focus-input100" data-symbol="&#xf190;"></span>
+                                    </div>
+                                    
+                                    <div class="m-t-1 m-b-1">
+                                        <p id="strength-text"></p>
+                                    </div>
+                                    <div class="wrap-input100 validate-input m-b-3" >
+                                        <span class="label-input100">Photo</span>
+                                        <input id="photo" class="input100" type="file" name="photo"
+                                            placeholder="Upload Book Photo" />
+            
+                                        <span class="focus-input100" data-symbol="&#xf15a;"></span>
+                                    </div>                        <div class="m-t-1 m-b-1">
+                                        <span class="error" id="error"></span>
+                                    </div>
+            
+                                    
+            
+                                    <div class="m-3 container-login100-form-btn">
+                                        <div class="wrap-login100-form-btn">
+                                            <div class="login100-form-bgbtn"></div>
+                                            <button type="button" class="login100-form-btn" onclick=submit()>
+                                                Submit
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+
+                                <% } %>
+                                <% } else{ %>
+                                    <a class="btn btn-primary" href="/add/book">Add Books</a>
+                                    <a class="btn btn-primary" href="/add/author">Add Authors</a>
+                                    <% } %>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+          </div>
+        </div>
+                                                                                         
+                                                      
+                                                        
+         </div><!--/col-12-->
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  
+  <script src="/javascripts/script.js"></script>
